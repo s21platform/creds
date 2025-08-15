@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "pkg/creds";
+
+// CredentialsService предоставляет доступ к учетным данным
+service CredentialsService {
+  // GetCreds возвращает значения для запрошенных переменных
+  rpc GetCreds(GetCredsRequest) returns (GetCredsResponse) {}
+}
+
+// GetCredsRequest содержит список имен переменных
+message GetCredsRequest {
+  repeated string names = 1;
+}
+
+// GetCredsResponse содержит список пар имя-значение
+message GetCredsResponse {
+  repeated Credential credentials = 1;
+}
+
+// Credential представляет пару имя-значение
+message Credential {
+  string name = 1;
+  string value = 2;
+}
