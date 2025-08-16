@@ -1,0 +1,5 @@
+.env
+.env.s21-cli
+.idea/
+docker-compose.s21-cli.yml
+docker-compose.yml
